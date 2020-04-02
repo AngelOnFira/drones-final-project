@@ -1,11 +1,14 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Camera.gd" type="Script" id=2]
 
-[node name="Main" type="Spatial"]
+[node name="Main" type="Node"]
+
+[node name="World" type="Spatial" parent="."]
 script = ExtResource( 1 )
 
-[node name="Camera" type="Camera" parent="."]
+[node name="Camera" type="Camera" parent="World"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 100 )
+far = 2000.0
 script = ExtResource( 2 )

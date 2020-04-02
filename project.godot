@@ -19,6 +19,14 @@ config/name="DronesFinalProject"
 run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Globals="*res://Scripts/Globals.gd"
+
+[global]
+
+frame=false
+
 [input]
 
 KEY_W={
