@@ -8,3 +8,6 @@ const RECEPTION_RATE = 10000
 
 # In bytes/second
 const TRANSMISSION_RATE = 10000
+
+var drone_cluster_lookup = {}
+var drones = []
