@@ -21,3 +21,5 @@ margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Messages" type="Node" parent="."]

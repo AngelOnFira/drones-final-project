@@ -70,11 +70,18 @@ func kmeans():
 				# If we're over size, remove the last element
 				if closest_drones.size() > cluster_size:
 					closest_drones.pop_back()
-			
+		
+		# The drone closest to the centroid is the Channel Head
+		Globals.channel_head_lookup[cluster_num] = closest_drones[0][1]
+		
 		# Make a list of all the drones to remove
 		var remove_list = []
 		for i in range(closest_drones.size()):
 			clusters[cluster_num].append(closest_drones[i][1])
+			
+			# Add drone objects to a lookup table
+			Globals.drone_cluster_lookup[closest_drones[i][1]] = cluster_num
+
 			remove_list.append(closest_drones[i][2])
 
 		# Sort and invert the indicies so removal happens from
