@@ -31,7 +31,7 @@ func send_message():
 
     new_message.final_destination = destination
     new_message.current_uploader = self
-    new_message.message_size = 1500000
+    new_message.message_size = 15000
 
     get_node('/root/Main/Messages').add_child(new_message)
     

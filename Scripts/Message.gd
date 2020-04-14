@@ -30,26 +30,20 @@ func start():
 
     remaining_transfer = message_size
     
+    visual_link = CSGSphere.new()
+    visual_link.set_scale(Vector3(0.5, 0.5, 0.5))
+    self.add_child(visual_link)
+
+    visual_link.transform.origin = current_uploader.transform.origin
+    
     update_visual_link()
 
 func update_visual_link():
-    if visual_link:
-        get_child(0).queue_free()
-        
-    visual_link = CSGCylinder.new()
-    self.add_child(visual_link)
+    var upload_percentage = 1 - remaining_transfer / message_size
+    print(upload_percentage)
+    var nodes_mid_line = current_downloader.translation - current_uploader.translation
     
-    visual_link.global_translate((current_downloader.translation + current_uploader.translation) / 2)
-    
-    visual_link.look_at(
-        current_downloader.translation,
-        Vector3(0, 0, 0)
-    )
-    
-    visual_link.rotate_x(deg2rad(90))
-    visual_link.set_scale(Vector3(1, 100, 1))
-    # look at one
-    # scale to half the distance
+    visual_link.transform.origin = nodes_mid_line * upload_percentage + current_uploader.transform.origin
 
 func upload(delta):
     var download_speed = current_downloader.download_rate
@@ -63,6 +57,8 @@ func upload(delta):
 
     if remaining_transfer <= 0:
         next_node()
+
+    update_visual_link()
 
 func next_node():
     var current_channel = Globals.drone_cluster_lookup[current_downloader]
