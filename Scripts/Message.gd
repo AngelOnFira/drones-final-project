@@ -40,7 +40,6 @@ func start():
 
 func update_visual_link():
     var upload_percentage = 1 - remaining_transfer / message_size
-    print(upload_percentage)
     var nodes_mid_line = current_downloader.translation - current_uploader.translation
     
     visual_link.transform.origin = nodes_mid_line * upload_percentage + current_uploader.transform.origin
@@ -71,7 +70,6 @@ func next_node():
     # if we're at destination
     if current_downloader == final_destination:
         self.queue_free()
-        print("message recieved")
         return
 
     current_uploader = current_downloader
@@ -84,5 +82,6 @@ func next_node():
         # if we're at their cluster head
         current_downloader = final_destination
 
+    current_uploader.outgoing_queue.push_back(self)
     current_downloader.incoming_queue.append(self)
     update_visual_link()

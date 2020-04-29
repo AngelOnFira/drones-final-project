@@ -18,7 +18,7 @@ func _ready():
     pass
 
 func roll_time_next_message():
-    self.time_until_next_message = rand_range(1,11)
+    self.time_until_next_message = rand_range(1,2)
 
 func send_message():
     var drones = Globals.drone_cluster_lookup.keys()
@@ -45,3 +45,13 @@ func _process(delta):
 
     if outgoing_queue.size() > 0:
         outgoing_queue[0].upload(delta)
+
+    download_rate = int(rand_range(
+        Globals.transfer_rate_lower,
+        Globals.transfer_rate_upper
+    ))
+
+    upload_rate = int(rand_range(
+        Globals.transfer_rate_lower,
+        Globals.transfer_rate_upper
+    ))
