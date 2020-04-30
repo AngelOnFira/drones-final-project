@@ -1,9 +1,9 @@
 extends Node
 
-const NUM_OF_DRONES = 10
-const NUM_OF_CLUSTERS = int((sqrt(8 * NUM_OF_DRONES + 1) - 1) / 2)
-const DRONES_PER_CLUSTER = int(NUM_OF_DRONES / NUM_OF_CLUSTERS)
-const REMAINDER_DRONES = NUM_OF_DRONES % NUM_OF_CLUSTERS
+var NUM_OF_DRONES = 10
+var NUM_OF_CLUSTERS = int((sqrt(8 * NUM_OF_DRONES + 1) - 1) / 2)
+var DRONES_PER_CLUSTER = int(NUM_OF_DRONES / NUM_OF_CLUSTERS)
+var REMAINDER_DRONES = NUM_OF_DRONES % NUM_OF_CLUSTERS
 
 var drone_cluster_lookup = {}
 var channel_head_lookup = {}

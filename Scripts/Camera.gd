@@ -18,24 +18,11 @@ onready var camera_transform = self.get_transform()
 
 
 func _ready():
-    Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
     set_physics_process(true)
     set_process_input(true)
 
 
-func _physics_process(delta):
-    if (is_mouse_motion):
-        mouse_speed = Input.get_last_mouse_speed()
-        is_mouse_motion = false
-    else:
-        mouse_speed = Vector2(0, 0)
-    
-    mouse_speed_x += mouse_speed.x * mouse_sensitivity
-    mouse_speed_y += mouse_speed.y * mouse_sensitivity
-    
-    var rot_x = Quat(X_AXIS, -mouse_speed_y)
-    var rot_y = Quat(Y_AXIS, -mouse_speed_x)
-    
+func _physics_process(delta):    
     if (Input.is_key_pressed(KEY_W)):
         camera_transform.origin += -self.get_transform().basis.z * camera_speed
     
@@ -54,7 +41,7 @@ func _physics_process(delta):
     if (Input.is_key_pressed(KEY_E)):
         camera_transform.origin += self.get_transform().basis.y * camera_speed
     
-    self.set_transform(camera_transform * Transform(rot_y) * Transform(rot_x))
+    self.set_transform(camera_transform)
 
 
 func _input(event):
