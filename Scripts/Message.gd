@@ -46,7 +46,6 @@ func start():
 	update_visual_link()
 
 func update_visual_link():
-	return
 	var upload_percentage = 1 - remaining_transfer / message_size
 	var nodes_mid_line = current_downloader.translation - current_uploader.translation
 	

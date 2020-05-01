@@ -11,10 +11,10 @@ func _process(delta):
 			total += Globals.total_messages_time[i]
 
 		var avg = total / Globals.total_messages_time.size()
-		$Panel/Htotal/Sliders/AvgCurrent.set_text("Last %d Message Average: %d" % [Globals.LAST_AVG_NUM, avg])
+		$Panel/Htotal/Sliders/AvgCurrent.set_text("Last %d Message Average: %d ms" % [Globals.LAST_AVG_NUM, avg])
 		
 		avg = Globals.total_messages_culm / Globals.total_messages_arrived
-		$Panel/Htotal/Sliders/AvgOverall.set_text("Total Average: %d" % avg)
+		$Panel/Htotal/Sliders/AvgOverall.set_text("Total Average: %d ms" % avg)
 
 
 func _on_Start_pressed():

@@ -38,10 +38,10 @@ __meta__ = {
 }
 
 [node name="Sliders" type="VBoxContainer" parent="UI/Panel/Htotal"]
-margin_right = 180.0
 margin_bottom = 100.0
 
 [node name="Drones" type="HBoxContainer" parent="UI/Panel/Htotal/Sliders"]
+visible = false
 margin_right = 180.0
 margin_bottom = 24.0
 
@@ -65,20 +65,17 @@ __meta__ = {
 }
 
 [node name="Start" type="Button" parent="UI/Panel/Htotal/Sliders"]
-margin_top = 28.0
-margin_right = 180.0
-margin_bottom = 48.0
+visible = false
+margin_right = 41.0
+margin_bottom = 20.0
 text = "Start"
 
 [node name="AvgOverall" type="Label" parent="UI/Panel/Htotal/Sliders"]
-margin_top = 52.0
-margin_right = 180.0
-margin_bottom = 66.0
+margin_bottom = 14.0
 
 [node name="AvgCurrent" type="Label" parent="UI/Panel/Htotal/Sliders"]
-margin_top = 70.0
-margin_right = 180.0
-margin_bottom = 84.0
+margin_top = 18.0
+margin_bottom = 32.0
 
 [node name="Messages" type="Node" parent="."]
 [connection signal="pressed" from="UI/Panel/Htotal/Sliders/Start" to="UI" method="_on_Start_pressed"]

@@ -21,23 +21,23 @@ func _ready():
 
 	kmeans()
 
-func _process(delta):
-	Globals.TIME_ITERATION_REMAINING -= delta
+# func _process(delta):
+# 	Globals.TIME_ITERATION_REMAINING -= delta
 
-	if Globals.TIME_ITERATION_REMAINING < 0:
-		Globals.TIME_ITERATION_REMAINING = Globals.TIMER
-		Globals.TIMES_TO_RUN -= 1
-		Globals.ITERATION_COUNTER += 1
+# 	if Globals.TIME_ITERATION_REMAINING < 0:
+# 		Globals.TIME_ITERATION_REMAINING = Globals.TIMER
+# 		Globals.TIMES_TO_RUN -= 1
+# 		Globals.ITERATION_COUNTER += 1
 
-		print("--------------")
-		print("Final average: %d" % (Globals.total_messages_culm / Globals.total_messages_arrived))
-		print("Cluster: %d + %d" % [
-			(int(round(sqrt(8 * Globals.NUM_OF_DRONES + 1) - 1) / 2)),
-			(Globals.NUM_OF_CLUSTERS - (int(round(sqrt(8 * Globals.NUM_OF_DRONES + 1) - 1) / 2)))
-		])
-		print("--------------")
+# 		print("--------------")
+# 		print("Final average: %d" % (Globals.total_messages_culm / Globals.total_messages_arrived))
+# 		print("Cluster: %d + %d" % [
+# 			(int(round(sqrt(8 * Globals.NUM_OF_DRONES + 1) - 1) / 2)),
+# 			(Globals.NUM_OF_CLUSTERS - (int(round(sqrt(8 * Globals.NUM_OF_DRONES + 1) - 1) / 2)))
+# 		])
+# 		print("--------------")
 
-		get_tree().quit()
+# 		get_tree().quit()
 		# if Globals.TIMES_TO_RUN == 0:
 		# 	get_tree().quit()
 		# else:

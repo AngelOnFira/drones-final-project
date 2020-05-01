@@ -1,7 +1,7 @@
 extends Node
 
-var NUM_OF_DRONES = 300
-var NUM_OF_CLUSTERS = int(round(sqrt(8 * NUM_OF_DRONES + 1) - 1) / 2) + 5
+var NUM_OF_DRONES = 100
+var NUM_OF_CLUSTERS = int(round(sqrt(8 * NUM_OF_DRONES + 1) - 1) / 2)
 var DRONES_PER_CLUSTER = int(NUM_OF_DRONES / NUM_OF_CLUSTERS)
 var REMAINDER_DRONES = NUM_OF_DRONES % NUM_OF_CLUSTERS
 
