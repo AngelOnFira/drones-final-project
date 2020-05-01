@@ -68,7 +68,7 @@ func upload(delta):
 	update_visual_link()
 
 func next_node():
-	var current_channel = Globals._cluster_lookup[current_downloader]
+	var current_channel = Globals.drone_cluster_lookup[current_downloader]
 	
 	current_uploader.outgoing_queue.pop_front()
 

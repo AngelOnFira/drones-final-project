@@ -38,10 +38,10 @@ func _process(delta):
 		print("--------------")
 
 		get_tree().quit()
-		if Globals.TIMES_TO_RUN == 0:
-			get_tree().quit()
-		else:
-			Globals.refresh()
+		# if Globals.TIMES_TO_RUN == 0:
+		# 	get_tree().quit()
+		# else:
+		# 	Globals.refresh()
 
 func kmeans():
 	for i in range(Globals.NUM_OF_CLUSTERS):
