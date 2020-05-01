@@ -18,35 +18,35 @@ onready var camera_transform = self.get_transform()
 
 
 func _ready():
-    set_physics_process(true)
-    set_process_input(true)
+	set_physics_process(true)
+	set_process_input(true)
 
 
-func _physics_process(delta):    
-    if (Input.is_key_pressed(KEY_W)):
-        camera_transform.origin += -self.get_transform().basis.z * camera_speed
-    
-    if (Input.is_key_pressed(KEY_S)):
-        camera_transform.origin += self.get_transform().basis.z * camera_speed
-    
-    if (Input.is_key_pressed(KEY_A)):
-        camera_transform.origin += -self.get_transform().basis.x * camera_speed
-    
-    if (Input.is_key_pressed(KEY_D)):
-        camera_transform.origin += self.get_transform().basis.x * camera_speed
-    
-    if (Input.is_key_pressed(KEY_Q)):
-        camera_transform.origin += -self.get_transform().basis.y * camera_speed
-    
-    if (Input.is_key_pressed(KEY_E)):
-        camera_transform.origin += self.get_transform().basis.y * camera_speed
-    
-    self.set_transform(camera_transform)
+func _physics_process(delta):	
+	if (Input.is_key_pressed(KEY_W)):
+		camera_transform.origin += -self.get_transform().basis.z * camera_speed
+	
+	if (Input.is_key_pressed(KEY_S)):
+		camera_transform.origin += self.get_transform().basis.z * camera_speed
+	
+	if (Input.is_key_pressed(KEY_A)):
+		camera_transform.origin += -self.get_transform().basis.x * camera_speed
+	
+	if (Input.is_key_pressed(KEY_D)):
+		camera_transform.origin += self.get_transform().basis.x * camera_speed
+	
+	if (Input.is_key_pressed(KEY_Q)):
+		camera_transform.origin += -self.get_transform().basis.y * camera_speed
+	
+	if (Input.is_key_pressed(KEY_E)):
+		camera_transform.origin += self.get_transform().basis.y * camera_speed
+	
+	self.set_transform(camera_transform)
 
 
 func _input(event):
-    if (event is InputEventMouseMotion):
-        is_mouse_motion = true
-    
-    if (Input.is_key_pressed(KEY_ESCAPE)):
-        get_tree().quit()
+	if (event is InputEventMouseMotion):
+		is_mouse_motion = true
+	
+	if (Input.is_key_pressed(KEY_ESCAPE)):
+		get_tree().quit()
